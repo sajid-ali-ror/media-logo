@@ -20,9 +20,10 @@ $(document).ready(function () {
         var id = this.id
         if (this.value.length > 4) {
             $(".card_text_area").text()
-            $("." + id).attr('href', this.value);
-            $("." + id + "_img").attr('src', "//logo.clearbit.com/" + this.value + "?size=40");
-            $("." + id + "_img_gray").attr('src', "//logo.clearbit.com/" + this.value + "?size=40&greyscale=true");
+           var domain =  this.value.split("www.")
+            $("." + id).attr('href', "https://www."+domain);
+            $("." + id + "_img").attr('src', "https://logo.clearbit.com/" + domain + "?size=40");
+            $("." + id + "_img_gray").attr('src', "https://logo.clearbit.com/" + domain + "?size=40&greyscale=true");
             $(".card_text_area").text($(".gray_active").html())
         }
     })
