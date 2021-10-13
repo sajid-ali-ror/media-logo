@@ -1,91 +1,64 @@
 .card.card-content-display
-%h1 Media Logos to Your Website
-/ <p><img alt="'As Seen On' Media Logos" title="'As Seen On' Media Logos" class="card card_img" src="/images/content/pr/conversion-optimization-add-as-seen-on-media-logos.jpg"></p>
-%h2 Instructions
-%ol
-%li Open your press release distribution report.
-%li Select favorite media site from each of the corresponding news networks (eg. FOX).
-%li Enter the links to those corresponding media sites below.
-%li Copy and paste the embed code to your website.
-%li Upload to Publish!
-%br/
-.ng-scope{"ng-app" => "mediaLogos", "ng-controller" => "mediaLogos"}
-.form-group.is-empty
-%input#abcLink.form-control.ng-pristine.ng-valid.ng-empty.ng-touched.input_field{:placeholder => "Link to ABC Press Release", :type => "text"}/
-%span.material-input
-.form-group.is-empty
-%input#cbsLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{:placeholder => "Link to CBS Press Release", :type => "text"}/
-%span.material-input
-.form-group.is-empty
-%input#foxLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{:placeholder => "Link to FOX Press Release", :type => "text"}/
-%span.material-input
-.form-group.is-empty
-%input#nbcLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{:placeholder => "Link to NBC Press Release", :type => "text"}/
-%span.material-input
-.form-group.is-empty
-%input#cwLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{:placeholder => "Link to CW Press Release", :type => "text"}/
-%span.material-input
-%br/
-.togglebutton
-%label
-%input.ng-pristine.ng-untouched.ng-valid.ng-empty.grayscale{"ng-model" => "grayscale", :type => "checkbox"}/
-Apply Grayscale Filter to Media Logos
-%h2 Preview
-%div{:style => "text-align:left"}
-.gray_active
-%a.prj-logo.grayscale-true.abcLink{:href => "", :target => "_blank"}
-%img.abcLink_img{:src => "https://pressreleasejet.com/assets/media-logos/logo-abc.png"}/
-%a.prj-logo.grayscale-true.cbsLink{:href => "", :target => "_blank"}
-%img.cbsLink_img{:src => "https://pressreleasejet.com/assets/media-logos/logo-cbs.png"}/
-%a.prj-logo.grayscale-true.foxLink{:href => "", :target => "_blank"}
-%img.foxLink_img{:src => "https://pressreleasejet.com/assets/media-logos/logo-fox.png"}/
-%a.prj-logo.grayscale-true.nbcLink{:href => "", :target => "_blank"}
-%img.nbcLink_img{:src => "https://pressreleasejet.com/assets/media-logos/logo-nbc.png"}/
-%a.prj-logo.grayscale-true.cwLink{:href => "", :target => "_blank"}
-%img.cwLink_img{:src => "https://pressreleasejet.com/assets/media-logos/logo-cw.png"}/
-.gray_inactive
-%a.prj-logo.grayscale-false.abcLink.prj-grayscale-true{:href => "", :target => "_blank"}
-%img.abcLink_img_gray{:src => "https://pressreleasejet.com/assets/media-logos/logo-abc.png"}/
-%a.prj-logo.grayscale-false.cbsLink.prj-grayscale-true{:href => "", :target => "_blank"}
-%img.cbsLink_img_gray{:src => "https://pressreleasejet.com/assets/media-logos/logo-cbs.png"}/
-%a.prj-logo.grayscale-false.foxLink.prj-grayscale-true{:href => "", :target => "_blank"}
-%img.foxLink_img_gray{:src => "https://pressreleasejet.com/assets/media-logos/logo-fox.png"}/
-%a.prj-logo.grayscale-false.nbcLink.prj-grayscale-true{:href => "", :target => "_blank"}
-%img.nbcLink_img_gray{:src => "https://pressreleasejet.com/assets/media-logos/logo-nbc.png"}/
-%a.prj-logo.grayscale-false.cwLink.prj-grayscale-true{:href => "", :target => "_blank"}
-%img.cwLink_img_gray{:src => "https://pressreleasejet.com/assets/media-logos/logo-cw.png"}/
-%a.prj-copyright{:href => "https://pressreleasejet.com", :target => "_blank", :title => "press release distribution"}
-Press
-Release Jet
-%h2 Embed Code
-%p
-Copy and paste the code below to the HTML of your website
-%textarea#txtSelect.card_text_area.ng-binding{:style => "width:calc(100% - 20px); height:150px; font-family: monospace; font-size: 13px; padding:10px; color:#333;"}
-:javascript
-$(document).ready(function () {
-$(".gray_inactive").hide()
-debugger
-$(".card_text_area").text($(".gray_active").html())
-$(".input_field").on(" focusout", function () {
-id = this.id
-if (this.value.length > 4) {
-$(".card_text_area").text()
-$("." + id).attr('href', this.value);
-$("." + id + "_img").attr('src', "//logo.clearbit.com/" + this.value + "?size=40");
-$("." + id + "_img_gray").attr('src', "//logo.clearbit.com/" + this.value + "?size=40&greyscale=true");
-$(".card_text_area").text($(".gray_active").html())
-}
-})
-$(".grayscale").on("click", function () {
-$(".card_text_area").text()
-if (this.checked) {
-$(".gray_inactive ").show()
-$(".gray_active").hide()
-$(".card_text_area").text($(".gray_inactive").html())
-} else {
-$(".gray_inactive ").hide()
-$(".gray_active").show()
-$(".card_text_area").text($(".gray_active").html())
-}
-})
-});
+  %h1 Media Logos to Your Website
+  / <p><img alt="'As Seen On' Media Logos" title="'As Seen On' Media Logos" class="card card_img" src="/images/content/pr/conversion-optimization-add-as-seen-on-media-logos.jpg"></p>
+  %h2 Instructions
+  %ol
+    %li Open your press release distribution report.
+    %li Select favorite media site from each of the corresponding news networks (eg. FOX).
+    %li Enter the links to those corresponding media sites below.
+    %li Copy and paste the embed code to your website.
+    %li Upload to Publish!
+  %br/
+  .ng-scope{"ng-app" => "mediaLogos", "ng-controller" => "mediaLogos"}
+    .form-group.is-empty
+      %input#abcLink.form-control.ng-pristine.ng-valid.ng-empty.ng-touched.input_field{placeholder: "Link to ABC Press Release", type: "text"}/
+      %span.material-input
+    .form-group.is-empty
+      %input#cbsLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{placeholder: "Link to CBS Press Release", type: "text"}/
+      %span.material-input
+    .form-group.is-empty
+      %input#foxLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{placeholder: "Link to FOX Press Release", type: "text"}/
+      %span.material-input
+    .form-group.is-empty
+      %input#nbcLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{placeholder: "Link to NBC Press Release", type: "text"}/
+      %span.material-input
+    .form-group.is-empty
+      %input#cwLink.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.input_field{placeholder: "Link to CW Press Release", type: "text"}/
+      %span.material-input
+    %br/
+    .togglebutton
+      %label
+        %input.ng-pristine.ng-untouched.ng-valid.ng-empty.grayscale{"ng-model" => "grayscale", type: "checkbox"}/
+        Apply Grayscale Filter to Media Logos
+    %h2 Preview
+    %div{style: "text-align:left"}
+      .gray_active
+        %a.prj-logo.grayscale-true.abcLink{href: "", target: "_blank"}
+          %img.abcLink_img{src: "https://pressreleasejet.com/assets/media-logos/logo-abc.png"}/
+        %a.prj-logo.grayscale-true.cbsLink{href: "", target: "_blank"}
+          %img.cbsLink_img{src: "https://pressreleasejet.com/assets/media-logos/logo-cbs.png"}/
+        %a.prj-logo.grayscale-true.foxLink{href: "", target: "_blank"}
+          %img.foxLink_img{src: "https://pressreleasejet.com/assets/media-logos/logo-fox.png"}/
+        %a.prj-logo.grayscale-true.nbcLink{href: "", target: "_blank"}
+          %img.nbcLink_img{src: "https://pressreleasejet.com/assets/media-logos/logo-nbc.png"}/
+        %a.prj-logo.grayscale-true.cwLink{href: "", target: "_blank"}
+          %img.cwLink_img{src: "https://pressreleasejet.com/assets/media-logos/logo-cw.png"}/
+      .gray_inactive
+        %a.prj-logo.grayscale-false.abcLink.prj-grayscale-true{href: "", target: "_blank"}
+          %img.abcLink_img_gray{src: "https://pressreleasejet.com/assets/media-logos/logo-abc.png"}/
+        %a.prj-logo.grayscale-false.cbsLink.prj-grayscale-true{href: "", target: "_blank"}
+          %img.cbsLink_img_gray{src: "https://pressreleasejet.com/assets/media-logos/logo-cbs.png"}/
+        %a.prj-logo.grayscale-false.foxLink.prj-grayscale-true{href: "", target: "_blank"}
+          %img.foxLink_img_gray{src: "https://pressreleasejet.com/assets/media-logos/logo-fox.png"}/
+        %a.prj-logo.grayscale-false.nbcLink.prj-grayscale-true{href: "", target: "_blank"}
+          %img.nbcLink_img_gray{src: "https://pressreleasejet.com/assets/media-logos/logo-nbc.png"}/
+        %a.prj-logo.grayscale-false.cwLink.prj-grayscale-true{href: "", target: "_blank"}
+          %img.cwLink_img_gray{src: "https://pressreleasejet.com/assets/media-logos/logo-cw.png"}/
+        %a.prj-copyright{href: "https://pressreleasejet.com", target: "_blank", title: "press release distribution"}
+          Press
+          Release Jet
+    %h2 Embed Code
+    %p
+      Copy and paste the code below to the HTML of your website
+    %textarea#txtSelect.card_text_area.ng-binding{style: "width:calc(100% - 20px); height:150px; font-family: monospace; font-size: 13px; padding:10px; color:#333;"}
+
