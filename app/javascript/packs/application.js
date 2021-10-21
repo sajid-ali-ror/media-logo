@@ -30,6 +30,8 @@ $(document).ready(function () {
                 if (domain.length > 1){
                     domain =  domain[1].split(".com")[0]+".com"
                 }
+            }else if (this.value.includes(".com/")) {
+               domain = this.value.split(".com/")[0]+".com"
             }else{
                 domain =  this.value
             }
