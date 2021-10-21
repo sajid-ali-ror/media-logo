@@ -14,19 +14,29 @@ ActiveStorage.start()
 
 $(document).ready(function () {
     $(".gray_inactive").hide()
-    $(".card_text_area").text($(".gray_active").html())
+    $(".card_text_area").text($(".gray_active_div").html())
     $(document).on("focusout",".input_field", function () {
         var id = this.id
+        var domain;
         if (this.value.length > 4) {
             $(".card_text_area").text()
-           var domain =  this.value.split("www.")
-            if (domain.length > 1){
-                domain =  domain[1].split(".com/")[0]+".com"
+            if (this.value.includes("www")){
+                 domain =  this.value.split("www.")
+                if (domain.length > 1){
+                    domain =  domain[1].split(".com")[0]+".com"
+                }
+            }else  if(this.value.includes("://")) {
+                 domain =  this.value.split("://")
+                if (domain.length > 1){
+                    domain =  domain[1].split(".com")[0]+".com"
+                }
+            }else{
+                domain =  this.value
             }
             $("#" + id+ "_tag").attr('href', "https://www."+domain);
             $("#" + id + "_img" ).attr('src', "https://logo.clearbit.com/" + domain + "?size=40");
             $("#" + id+ "_img_gray" ).attr('src', "https://logo.clearbit.com/" + domain + "?size=40&greyscale=true");
-            $(".card_text_area").text($(".gray_active").html())
+            $(".card_text_area").text($(".gray_active_div").html())
         }
     })
     $(document).on("click",".grayscale", function () {
@@ -34,11 +44,11 @@ $(document).ready(function () {
         if (this.checked) {
             $(".gray_inactive ").show()
             $(".gray_active").hide()
-            $(".card_text_area").text($(".gray_inactive").html())
+            $(".card_text_area").text($(".gray_inactive_div").html())
         } else {
             $(".gray_inactive ").hide()
             $(".gray_active").show()
-            $(".card_text_area").text($(".gray_active").html())
+            $(".card_text_area").text($(".gray_active_div").html())
         }
     })
     $(document).on("click",".button4", function () {

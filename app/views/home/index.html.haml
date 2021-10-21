@@ -1,13 +1,6 @@
 .card.card-content-display
-  %h1 Media Logos to Your Website
+  %h1{style: "text-align:center"} Media Logos to Your Website
   / <p><img alt="'As Seen On' Media Logos" title="'As Seen On' Media Logos" class="card card_img" src="/images/content/pr/conversion-optimization-add-as-seen-on-media-logos.jpg"></p>
-  %h2 Instructions
-  %ol
-    %li Open your press release distribution report.
-    %li Select favorite media site from each of the corresponding news networks (eg. FOX).
-    %li Enter the links to those corresponding media sites below.
-    %li Copy and paste the embed code to your website.
-    %li Upload to Publish!
   %br/
   %button.button.button4 Add Field +
   .ng-scope{"ng-app" => "mediaLogos", "ng-controller" => "mediaLogos"}
@@ -17,10 +10,14 @@
       %label
         %input.ng-pristine.ng-untouched.ng-valid.ng-empty.grayscale{"ng-model" => "grayscale", type: "checkbox"}/
         Apply Grayscale Filter to Media Logos
-    %h2{style: "text-align:center"} As Seen In
     %div{style: "text-align:center"}
-      .gray_active
-      .gray_inactive
+      %div{style: "text-align:center"}
+        .gray_active_div
+          %div.gray_active{style: "text-align:center"}
+            %h2{style: "text-align:center"} As Seen In
+        .gray_inactive_div
+          %div.gray_inactive{style: "text-align:center"}
+            %h2{style: "text-align:center"} As Seen In
     %h2 Embed Code
     %p
       Copy and paste the code below to the HTML of your website
